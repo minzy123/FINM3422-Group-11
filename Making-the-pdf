@@ -12,6 +12,17 @@ pdf.add_page()
 pdf.set_font('Arial', 'B', 16)
 
 # Add text
+# Add a left border filled with the hue #53006A
+pdf.set_fill_color(83, 0, 106)  # Set fill color to #53006A
+# Add the purple left border
+pdf.rect(x=0, y=0, w=5, h=297, style='F')  # Draw the filled rectangle (A4 height is 297mm)
+
+# Add the yellow border next to the purple border
+pdf.set_fill_color(255, 255, 0)  # Set fill color to yellow
+pdf.set_fill_color(255, 180, 1)  # Set fill color to #FFB401
+pdf.rect(x=5, y=0, w=2, h=297, style='F')  # Draw the yellow rectangle
+
+# Add the title text
 pdf.cell(40, 10, 'TPG Telecom Limited Equity Research Report')
 pdf.ln(10)  # Line break
 
