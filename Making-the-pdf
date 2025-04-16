@@ -12,7 +12,14 @@ pdf.add_page()
 pdf.set_font('Arial', 'B', 16)
 
 # Add text
-pdf.cell(40, 10, 'TPG Telecom Limited')
+pdf.cell(40, 10, 'TPG Telecom Limited Equity Research Report')
+pdf.ln(10)  # Line break    
+
+pdf.set_font('Arial', '', 12) #Set font to smaller size
+pdf.cell(0, 10, 'by Niamh OSullivan, Sarah the slug Ott, Snig Jaiswal, Minh Anh Nguyen')
+
+# Add a logo to the top right corner
+pdf.image('TPG logo.png', x=160, y=10, w=40)  
 
 # Save the PDF
 pdf.output('TPG_Telecom_Limited.pdf')

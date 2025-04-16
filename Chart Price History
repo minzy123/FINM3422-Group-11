@@ -1,19 +1,9 @@
-import pandas as pd
-import matplotlib.pyplot as plt
+import yfinance as yf
+tpg = yf.download(
+    tickers = 'TPG', 
+    start='2023-04-16', 
+    end='2024-04-16'
+    )
+tpg
 
-data = pd.read_csv('TPG Historical Data.csv')
-
-data['Date'] = pd.to_datetime(data['Date'])
-
-
-data = data.sort_values('Date')
-
-# Plot the price history
-plt.figure(figsize=(10, 6))
-plt.plot(data['Date'], data['Close'], label='TPG Telecom Stock Price', color='blue')
-plt.title('TPG Telecom Price History')
-plt.xlabel('Date')
-plt.ylabel('Price (AUD)')
-plt.legend()
-plt.grid(True)
-plt.show()
+tpg['Close'].plot()
