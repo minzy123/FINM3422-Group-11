@@ -13,15 +13,80 @@ pdf.set_font('Arial', 'B', 16)
 
 # Add text
 pdf.cell(40, 10, 'TPG Telecom Limited Equity Research Report')
-pdf.ln(10)  # Line break    
+pdf.ln(10)  # Line break
 
 pdf.set_font('Arial', '', 12) #Set font to smaller size
-pdf.cell(0, 10, "by Niamh O'Sullivan, Sarah the slug Ott, Snig Jaiswal, Minh Anh Nguyen")
+pdf.cell(0, 10, "Authored by FINM3422 Group 11")
+
+# Add headshot images and names
+pdf.image('Niamh_headshot.jpg', x=10, y=30, w=30)  # Add first headshot
+pdf.set_xy(10, 60)  # Position below the first image
+pdf.cell(0, 10, "Niamh O'Sullivan", align='L')
+
+pdf.image('Sarah_headshot.jpg', x=45, y=30, w=30)  # Add second headshot
+pdf.set_xy(45, 60)  # Position below the second image
+pdf.cell(0, 10, 'Sarah Ott', align='L')
+
+pdf.image('Minh_headshot.jpg', x=80, y=30, w=30)  # Add third headshot
+pdf.set_xy(80, 60)  # Position below the third image
+# Adjust positions to fit Snig's headshot and name
+pdf.cell(0, 10, 'Minh Ann Nguyen', align='L')
+
+# Add Snig's headshot and name
+pdf.image('Snig_headshot.jpg', x=115, y=30, w=30)  # Add fourth headshot
+pdf.set_xy(115, 60)  # Position below the fourth image
+pdf.cell(0, 10, 'Snig Jaiswal', align='L')
 
 # Add a logo to the top right corner
 pdf.image('TPG logo.png', x=160, y=10, w=40)
 
-# Add a close price history image below the names
+# Add the date
+pdf.set_xy(0, 30)  # Set position
+pdf.set_font('Arial', '', 12)
+pdf.cell(0, 10, '16th April 2025', align='R')
+
+# Add "Initiation of Coverage"
+pdf.set_xy(0, 40)
+pdf.cell(0, 10, 'Initiation of Coverage', align='R')
+
+# Add "HOLD" in larger font
+pdf.set_xy(0, 50)
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(0, 10, 'HOLD', align='R')
+
+# Reduce font size back to normal
+pdf.set_font('Arial', '', 12)
+
+# Add "ASX:TPG"
+pdf.set_xy(0, 60)
+pdf.cell(0, 10, 'ASX:TPG', align='R')
+
+# Add "Price: $4.90"
+pdf.set_xy(0, 70)
+pdf.cell(0, 10, 'Price: $4.90', align='R')
+
+# Add "Target Price: $X" in bold
+pdf.set_xy(0, 80)
+pdf.set_font('Arial', 'B', 12)
+pdf.cell(0, 10, 'Target Price: $X', align='R')
+
+# Add "Downside: X%"
+pdf.set_xy(0, 90)
+pdf.set_font('Arial', '', 12)
+pdf.cell(0, 10, 'Downside: X%', align='R')
+
+# Draw a line across starting from the right-hand side and ending in line with the start of "Initiation"
+pdf.set_xy(0, 100)  # Set position for the line
+pdf.set_draw_color(0, 0, 0)  # Set line color to black
+pdf.line(10, 100, 200, 100)  # Draw the line (adjust coordinates as needed)
+
+# Add a new page for the graphs
+pdf.add_page()
+
+# Add the logo to the new page
+pdf.image('TPG logo.png', x=160, y=10, w=40)
+
+# Add the close price history images
 pdf.image('tpg_close_price_history.png', x=10, y=30, w=190)
 pdf.image('asx200_close_price_history.png', x=10, y=160, w=190)
 
