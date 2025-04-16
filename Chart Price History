@@ -2,7 +2,7 @@ import yfinance as yf
 import matplotlib.pyplot as plt  # Import matplotlib for plotting
 
 tpg = yf.download(
-    tickers='TPG', 
+    tickers='TPG.AX', 
     start='2024-04-16', 
     end='2025-04-16'
 )

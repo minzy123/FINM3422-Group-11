@@ -6,7 +6,7 @@ from fpdf import FPDF
 pdf = FPDF(orientation='P', unit='mm', format='A4')
 
 # Add a page
-pdf.add_page()
+pdf.add_page() #adding page
 
 # Set font
 pdf.set_font('Arial', 'B', 16)
@@ -29,27 +29,8 @@ pdf.ln(10)  # Line break
 pdf.set_font('Arial', '', 12) #Set font to smaller size
 pdf.cell(0, 10, "Authored by FINM3422 Group 11")
 
-# Add headshot images and names
-pdf.image('Niamh_headshot.jpg', x=10, y=30, w=30)  # Add first headshot
-pdf.set_xy(10, 60)  # Position below the first image
-pdf.cell(0, 10, "Niamh O'Sullivan", align='L')
-
-pdf.image('Sarah_headshot.jpg', x=45, y=30, w=30)  # Add second headshot
-pdf.set_xy(45, 60)  # Position below the second image
-pdf.cell(0, 10, 'Sarah Ott', align='L')
-
-pdf.image('Minh_headshot.jpg', x=80, y=30, w=30)  # Add third headshot
-pdf.set_xy(80, 60)  # Position below the third image
-# Adjust positions to fit Snig's headshot and name
-pdf.cell(0, 10, 'Minh Ann Nguyen', align='L')
-
-# Add Snig's headshot and name
-pdf.image('Snig_headshot.jpg', x=115, y=30, w=30)  # Add fourth headshot
-pdf.set_xy(115, 60)  # Position below the fourth image
-pdf.cell(0, 10, 'Snig Jaiswal', align='L')
-
 # Add a logo to the top right corner
-pdf.image('TPG logo.png', x=160, y=10, w=40)
+pdf.image('TPG-logo.png', x=160, y=10, w=40)
 
 # Add the date
 pdf.set_xy(0, 30)  # Set position
@@ -79,23 +60,25 @@ pdf.cell(0, 10, 'Price: $4.90', align='R')
 # Add "Target Price: $X" in bold
 pdf.set_xy(0, 80)
 pdf.set_font('Arial', 'B', 12)
-pdf.cell(0, 10, 'Target Price: $X', align='R')
+pdf.cell(0, 10, 'Target Price: $5.0', align='R')
 
 # Add "Downside: X%"
 pdf.set_xy(0, 90)
 pdf.set_font('Arial', '', 12)
-pdf.cell(0, 10, 'Downside: X%', align='R')
+pdf.set_text_color(0, 128, 0)  # Set text colour to green
+pdf.cell(0, 10, 'Upside: X%', align='R')
+pdf.set_text_color(0, 0, 0)  # Reset text colour to black
 
 # Draw a line across starting from the right-hand side and ending in line with the start of "Initiation"
 pdf.set_xy(0, 100)  # Set position for the line
 pdf.set_draw_color(0, 0, 0)  # Set line color to black
-pdf.line(10, 100, 200, 100)  # Draw the line (adjust coordinates as needed)
+pdf.line(150, 100, 200, 100)  # Draw the line with a length of 50, ending at the right
 
 # Add a new page for the graphs
 pdf.add_page()
 
 # Add the logo to the new page
-pdf.image('TPG logo.png', x=160, y=10, w=40)
+pdf.image('TPG-logo.png', x=160, y=10, w=40)
 
 # Add the close price history images
 pdf.image('tpg_close_price_history.png', x=10, y=30, w=190)
