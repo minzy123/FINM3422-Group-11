@@ -19,7 +19,10 @@ pdf.set_font('Arial', '', 12) #Set font to smaller size
 pdf.cell(0, 10, 'by Niamh OSullivan, Sarah the slug Ott, Snig Jaiswal, Minh Anh Nguyen')
 
 # Add a logo to the top right corner
-pdf.image('TPG logo.png', x=160, y=10, w=40)  
+pdf.image('TPG logo.png', x=160, y=10, w=40)
+
+# Add a close price history image below the names
+pdf.image('tpg_close_price_history.png', x=10, y=40, w=190)
 
 # Save the PDF
 pdf.output('TPG_Telecom_Limited.pdf')

@@ -1,9 +1,17 @@
 import yfinance as yf
+import matplotlib.pyplot as plt  # Import matplotlib for plotting
+
 tpg = yf.download(
-    tickers = 'TPG', 
-    start='2023-04-16', 
-    end='2024-04-16'
-    )
+    tickers='TPG', 
+    start='2024-04-16', 
+    end='2025-04-16'
+)
 tpg
 
 tpg['Close'].plot()
+plt.title('TPG Close Price History') 
+plt.xlabel('Date')  
+plt.ylabel('Close Price')  
+plt.show()  # Display the graph
+
+plt.savefig('tpg_close_price_history.png')
