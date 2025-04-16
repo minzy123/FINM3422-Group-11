@@ -1,0 +1,29 @@
+# FINM3422-Group-11
+
+from fpdf import FPDF
+
+# Create a PDF object
+pdf = FPDF(orientation='P', unit='mm', format='A4')
+
+# Add a page
+pdf.add_page()
+
+# Set font
+pdf.set_font('Arial', 'B', 16)
+
+# Add text
+pdf.cell(40, 10, 'TPG Telecom Limited Equity Research Report')
+pdf.ln(10)  # Line break    
+
+pdf.set_font('Arial', '', 12) #Set font to smaller size
+pdf.cell(0, 10, 'by Niamh OSullivan, Sarah the slug Ott, Snig Jaiswal, Minh Anh Nguyen')
+
+# Add a logo to the top right corner
+pdf.image('TPG logo.png', x=160, y=10, w=40)
+
+# Add a close price history image below the names
+pdf.image('tpg_close_price_history.png', x=10, y=30, w=190)
+pdf.image('asx200_close_price_history.png', x=10, y=160, w=190)
+
+# Save the PDF
+pdf.output('TPG_Telecom_Limited.pdf')
