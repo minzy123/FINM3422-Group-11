@@ -15,3 +15,17 @@ plt.ylabel('Close Price')
 plt.show()  # Display the graph
 
 plt.savefig('tpg_close_price_history.png')
+
+asx200 = yf.download(
+    tickers='^AXJO',  # Ticker symbol for ASX200
+    start='2024-04-16',
+    end='2025-04-16'
+)
+
+asx200['Close'].plot()
+plt.title('ASX200 Close Price History')
+plt.xlabel('Date')
+plt.ylabel('Close Price')
+plt.show()  # Display the graph
+
+plt.savefig('asx200_close_price_history.png')
