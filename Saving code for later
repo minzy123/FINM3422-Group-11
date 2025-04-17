@@ -16,3 +16,28 @@
 #pdf.image('Snig_headshot.jpg', x=115, y=30, w=30)  # Add fourth headshot
 #pdf.set_xy(115, 60)  # Position below the fourth image
 #pdf.cell(0, 10, 'Snig Jaiswal', align='L')
+
+
+#TPG delivered underlying EBITDA of A$1,988 million, placing it at the midpoint of its FY24 guidance and in line with broader consensus estimates. Growth in mobile service revenue (+5% YoY) was the keycontributor, although this was offset by a decline in fixed-line performance. Average revenue per user (ARPU) in mobile increased by 4%, although subscriber numbers declined due to aggressive handset promotions by competitors such as Optus and Telstra and reduced international inbound migration. Looking ahead, the divestiture of Energy, Gas & Water (EG&W) assets weighed onreported top-line growth and earnings, inferring strengthened performance in FY25. 
+
+#Cost containment featured prominently in TPG’s FY24 results. Group-level gross margins rose by 210bpsyear-on-year, although there was a slight sequential contraction of 50bps in H2—primarily due to theEG&W division. Operating expenses decelerated in H2, and management has guided for flat operating costs for FY25.
+
+# Add "Recent Company Highlights" heading
+#pdf.set_xy(10, pdf.get_y() + 5)  # Set position 10mm below the current Y position
+#pdf.set_font('Arial', 'B', 16)  # Set font to bold and same size as "Company Overview"
+#pdf.cell(0, 10, 'Recent Company Highlights', align='L')
+
+# Open and read the content of the frontheadlines.txt file
+#with open('frontheadlines.txt', 'r') as file:
+    #front_headlines_text = file.read()
+
+# Set position below the "Recent Company Highlights" heading
+#pdf.set_xy(10, pdf.get_y() + 10)  # Adjust position as needed
+
+# Set font for the content
+#pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 135mm width
+#pdf.multi_cell(135, 5, front_headlines_text)
+
+
