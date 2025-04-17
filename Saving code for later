@@ -1,0 +1,18 @@
+# Add headshot images and names
+#pdf.image('Niamh_headshot.jpg', x=10, y=30, w=30)  # Add first headshot
+#pdf.set_xy(10, 60)  # Position below the first image
+#pdf.cell(0, 10, "Niamh O'Sullivan", align='L')
+
+#pdf.image('Sarah_headshot.jpg', x=45, y=30, w=30)  # Add second headshot
+#pdf.set_xy(45, 60)  # Position below the second image
+#pdf.cell(0, 10, 'Sarah Ott', align='L')
+
+#pdf.image('Minh_headshot.jpg', x=80, y=30, w=30)  # Add third headshot
+#pdf.set_xy(80, 60)  # Position below the third image
+# Adjust positions to fit Snig's headshot and name
+#pdf.cell(0, 10, 'Minh Ann Nguyen', align='L')
+
+# Add Snig's headshot and name
+#pdf.image('Snig_headshot.jpg', x=115, y=30, w=30)  # Add fourth headshot
+#pdf.set_xy(115, 60)  # Position below the fourth image
+#pdf.cell(0, 10, 'Snig Jaiswal', align='L')

@@ -1,19 +1,31 @@
-import pandas as pd
-import matplotlib.pyplot as plt
+import yfinance as yf
+import matplotlib.pyplot as plt  # Import matplotlib for plotting
 
-data = pd.read_csv('TPG Historical Data.csv')
+tpg = yf.download(
+    tickers='TPG.AX', 
+    start='2024-04-16', 
+    end='2025-04-16'
+)
+tpg
 
-data['Date'] = pd.to_datetime(data['Date'])
+tpg['Close'].plot()
+plt.title('TPG Close Price History') 
+plt.xlabel('Date')  
+plt.ylabel('Close Price')  
+plt.show()  # Display the graph
 
+plt.savefig('tpg_close_price_history.png')
+asx200 = yf.download(
+    tickers='^AXJO',  # Ticker symbol for ASX200
+    start='2024-04-16',
+    end='2025-04-16',
+    auto_adjust=True  # Adjust for stock splits and dividends
+)
 
-data = data.sort_values('Date')
-
-# Plot the price history
-plt.figure(figsize=(10, 6))
-plt.plot(data['Date'], data['Close'], label='TPG Telecom Stock Price', color='blue')
-plt.title('TPG Telecom Price History')
+asx200['Close'].plot()
+plt.title('ASX200 Close Price History')
 plt.xlabel('Date')
-plt.ylabel('Price (AUD)')
-plt.legend()
-plt.grid(True)
-plt.show()
+plt.ylabel('Close Price')
+plt.show()  # Display the graph
+
+plt.savefig('asx200_close_price_history.png')

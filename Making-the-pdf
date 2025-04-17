@@ -1,0 +1,88 @@
+# FINM3422-Group-11 #change
+
+from fpdf import FPDF
+
+# Create a PDF object
+pdf = FPDF(orientation='P', unit='mm', format='A4')
+
+# Add a page
+pdf.add_page() #adding page
+
+# Set font
+pdf.set_font('Arial', 'B', 16)
+
+# Add text
+# Add a left border filled with the hue #53006A
+pdf.set_fill_color(83, 0, 106)  # Set fill color to #53006A
+# Add the purple left border
+pdf.rect(x=0, y=0, w=5, h=297, style='F')  # Draw the filled rectangle (A4 height is 297mm)
+
+# Add the yellow border next to the purple border
+pdf.set_fill_color(255, 255, 0)  # Set fill color to yellow
+pdf.set_fill_color(255, 180, 1)  # Set fill color to #FFB401
+pdf.rect(x=5, y=0, w=2, h=297, style='F')  # Draw the yellow rectangle
+
+# Add the title text
+pdf.cell(40, 10, 'TPG Telecom Limited Equity Research Report')
+pdf.ln(10)  # Line break
+
+pdf.set_font('Arial', '', 12) #Set font to smaller size
+pdf.cell(0, 10, "Authored by FINM3422 Group 11")
+
+# Add a logo to the top right corner
+pdf.image('TPG-logo.png', x=160, y=10, w=40)
+
+# Add the date
+pdf.set_xy(0, 30)  # Set position
+pdf.set_font('Arial', '', 12)
+pdf.cell(0, 10, '16th April 2025', align='R')
+
+# Add "Initiation of Coverage"
+pdf.set_xy(0, 40)
+pdf.cell(0, 10, 'Initiation of Coverage', align='R')
+
+# Add "HOLD" in larger font
+pdf.set_xy(0, 50)
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(0, 10, 'HOLD', align='R')
+
+# Reduce font size back to normal
+pdf.set_font('Arial', '', 12)
+
+# Add "ASX:TPG"
+pdf.set_xy(0, 60)
+pdf.cell(0, 10, 'ASX:TPG', align='R')
+
+# Add "Price: $4.90"
+pdf.set_xy(0, 70)
+pdf.cell(0, 10, 'Price: $4.90', align='R')
+
+# Add "Target Price: $X" in bold
+pdf.set_xy(0, 80)
+pdf.set_font('Arial', 'B', 12)
+pdf.cell(0, 10, 'Target Price: $5.0', align='R')
+
+# Add "Downside: X%"
+pdf.set_xy(0, 90)
+pdf.set_font('Arial', '', 12)
+pdf.set_text_color(0, 128, 0)  # Set text colour to green
+pdf.cell(0, 10, 'Upside: X%', align='R')
+pdf.set_text_color(0, 0, 0)  # Reset text colour to black
+
+# Draw a line across starting from the right-hand side and ending in line with the start of "Initiation"
+pdf.set_xy(0, 100)  # Set position for the line
+pdf.set_draw_color(0, 0, 0)  # Set line color to black
+pdf.line(150, 100, 200, 100)  # Draw the line with a length of 50, ending at the right
+
+# Add a new page for the graphs
+pdf.add_page()
+
+# Add the logo to the new page
+pdf.image('TPG-logo.png', x=160, y=10, w=40)
+
+# Add the close price history images
+pdf.image('tpg_close_price_history.png', x=10, y=30, w=190)
+pdf.image('asx200_close_price_history.png', x=10, y=160, w=190)
+
+# Save the PDF
+pdf.output('TPG_Telecom_Limited.pdf')
