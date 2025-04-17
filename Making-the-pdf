@@ -114,6 +114,24 @@ pdf.set_xy(0, 150)
 pdf.set_font('Arial', '', 10)  # Set smaller font
 pdf.cell(0, 10, "4882601@student.uq.edu.au", align='R')
 
+# Add "Company Overview" heading
+pdf.set_xy(10, 30)  # Set position 10mm down from "Authored by FINM3422 Group 11"
+pdf.set_font('Arial', 'B', 16)  # Set font to bold and same size
+pdf.cell(0, 10, 'Company Overview', align='L')
+
+# Open and read the content of the companyoverview.txt file
+with open('companyoverview.txt', 'r') as file:
+    company_overview_text = file.read()
+
+# Set position below the "Company Overview" heading
+pdf.set_xy(10, 40)  # Adjust position as needed
+
+# Set font for the content
+pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 100mm width
+pdf.multi_cell(135, 5, company_overview_text)
+
 # Add a new page for the graphs
 pdf.add_page()
 
@@ -143,3 +161,4 @@ pdf.ln(10)  # Line break
 
 # Save the PDF
 pdf.output('TPG_Telecom_Limited.pdf')
+
