@@ -1,0 +1,3 @@
+The June 2025 price target of ___ has been drived from the DCF valuation. The DCF assumed a WACC of 7.2%, 
+alongside an equity risk premium of 3.91%< risk-free rate of 4.29% and beta of 0.68. The terminal growth
+rate was derived by an average of Australia's current GDP growth rate of 2.4% and inflation of 2.7%. 
