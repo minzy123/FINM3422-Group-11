@@ -2,6 +2,7 @@
 
 from fpdf import FPDF
 import requests
+import pandas as pd
 
 # Create a PDF object
 pdf = FPDF(orientation='P', unit='mm', format='A4')
@@ -121,7 +122,11 @@ pdf.set_draw_color(0, 0, 0)  # Set line color to black
 pdf.line(150, 160, 200, 160)  # Draw the line with a length of 50, ending at the right, positioned 5mm below the email "4882601@student.uq.edu.au"
 
 # Add the graph "TPG share price and volume.png"
-pdf.image('TPG share price and volume.png', x=10, y=200, w=160)
+pdf.image('TPG share price and volume.png', x=10, y=200, w=138)
+
+
+# Add the image "Table for first page.png" directly under the line
+pdf.image('Table for first page.png', x=150, y=165, w=52, h=25)
 
 # Add "Company Overview" heading
 pdf.set_xy(10, 30)  # Set position 10mm down from "Authored by FINM3422 Group 11"
@@ -191,7 +196,7 @@ pdf.add_page()
 pdf.image('TPG-logo.png', x=160, y=5, w=45)
 
 # Add the close price history images
-pdf.image('tpg_close_price_history.png', x=10, y=30, w=190)
+pdf.image('tpg_close_price_history.png', x=10, y=30, w=170)
 # Add a new page for "About the Authors"
 pdf.add_page()
 
