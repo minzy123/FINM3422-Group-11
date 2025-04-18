@@ -7,11 +7,15 @@ def dividend_yield(dividend, price):
     return dividend / price
 
 # Function to calculate the earnings per share of a stock
-def eps(net_income, shares_outstanding):
-    return net_income / shares_outstanding
+def eps(earnings, shares_outstanding):
+    return earnings / shares_outstanding
 
 # Function to calculate ROA of a stock
-def roa(net_income, total_assets):
-    return net_income / total_assets
+def roa(earnings, total_assets):
+    return earnings / total_assets
+
+def roe(earnings, total_equity):
+    return earnings / total_equity
+
 
 
