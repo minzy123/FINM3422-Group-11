@@ -115,6 +115,14 @@ pdf.set_xy(0, 150)
 pdf.set_font('Arial', '', 10)  # Set smaller font
 pdf.cell(0, 10, "4882601@student.uq.edu.au", align='R')
 
+# Draw a line across starting from the right-hand side and ending in line with the start of "Initiation"
+pdf.set_xy(0, 100)  # Set position for the line
+pdf.set_draw_color(0, 0, 0)  # Set line color to black
+pdf.line(150, 160, 200, 160)  # Draw the line with a length of 50, ending at the right, positioned 5mm below the email "4882601@student.uq.edu.au"
+
+# Add the graph "TPG share price and volume.png"
+pdf.image('TPG share price and volume.png', x=10, y=200, w=160)
+
 # Add "Company Overview" heading
 pdf.set_xy(10, 30)  # Set position 10mm down from "Authored by FINM3422 Group 11"
 pdf.set_font('Arial', 'B', 16)  # Set font to bold and same size
