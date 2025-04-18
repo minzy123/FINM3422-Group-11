@@ -1,4 +1,4 @@
-# FINM3422-Group-11 #changes
+# FINM3422-Group-11
 
 from fpdf import FPDF
 
