@@ -1,4 +1,5 @@
 import yfinance as yf
+import pandas as pd
 import matplotlib.pyplot as plt  # Import matplotlib for plotting
 
 tpg = yf.download(
@@ -29,3 +30,41 @@ plt.ylabel('Close Price')
 plt.show()  # Display the graph
 
 plt.savefig('asx200_close_price_history.png')
+
+# Load the data from the Excel file
+tpg_data = pd.read_excel('TPGsharepricedata.xls')
+
+# Ensure the 'Date' column is in datetime format
+tpg_data['Date'] = pd.to_datetime(tpg_data['Date'])
+
+# Set the 'Date' column as the index
+tpg_data.set_index('Date', inplace=True)
+
+# Create a figure and axis objects
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+# Plot the share price as a line
+ax1.plot(tpg_data.index, tpg_data['Close'], color='#53006A', label='Close Price')
+ax1.set_xlabel('Date')
+ax1.set_ylabel('Close Price', color='purple')
+ax1.tick_params(axis='y', labelcolor='purple')
+
+# Create a second y-axis for the volume
+ax2 = ax1.twinx()
+ax2.bar(tpg_data.index, tpg_data['Volume'], color='#FFB401', alpha=0.5, label='Volume')
+ax2.set_ylabel('Volume', color='orange')
+ax2.tick_params(axis='y', labelcolor='orange')
+
+# Add a title and legend
+plt.title('TPG Share Price and Volume')
+fig.tight_layout()
+# Add legends for both axes
+ax1.legend(loc='upper left')
+ax2.legend(loc='upper right')
+
+# Update the colors for the share price line and volume
+ax1.plot(tpg_data.index, tpg_data['Close'], color='#53006A', label='Close Price')
+ax2.bar(tpg_data.index, tpg_data['Volume'], color='#FFB401', alpha=0.5, label='Volume')
+
+# Save the updated graph
+plt.savefig('TPG share price and volume.png')

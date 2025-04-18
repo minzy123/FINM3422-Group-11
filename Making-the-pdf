@@ -1,6 +1,7 @@
-# FINM3422-Group-11 #change
+# FINM3422-Group-11
 
 from fpdf import FPDF
+import requests
 
 # Create a PDF object
 pdf = FPDF(orientation='P', unit='mm', format='A4')
@@ -114,6 +115,14 @@ pdf.set_xy(0, 150)
 pdf.set_font('Arial', '', 10)  # Set smaller font
 pdf.cell(0, 10, "4882601@student.uq.edu.au", align='R')
 
+# Draw a line across starting from the right-hand side and ending in line with the start of "Initiation"
+pdf.set_xy(0, 100)  # Set position for the line
+pdf.set_draw_color(0, 0, 0)  # Set line color to black
+pdf.line(150, 160, 200, 160)  # Draw the line with a length of 50, ending at the right, positioned 5mm below the email "4882601@student.uq.edu.au"
+
+# Add the graph "TPG share price and volume.png"
+pdf.image('TPG share price and volume.png', x=10, y=200, w=160)
+
 # Add "Company Overview" heading
 pdf.set_xy(10, 30)  # Set position 10mm down from "Authored by FINM3422 Group 11"
 pdf.set_font('Arial', 'B', 16)  # Set font to bold and same size
@@ -131,6 +140,49 @@ pdf.set_font('Arial', '', 10)
 
 # Add the text with word wrapping to fit within 100mm width
 pdf.multi_cell(135, 5, company_overview_text)
+
+# Add "Recent Company Highlights" heading
+pdf.set_xy(10, 65)  # Set position below the "Company Overview" section
+pdf.set_font('Arial', 'B', 16)  # Set font to bold and same size
+pdf.cell(0, 10, 'Recent Company Highlights', align='L')
+
+# Open and read the content of the frontheadlines.txt file
+with open('frontheadlines.txt', 'r') as file:
+    front_headlines_text = file.read()
+
+# Set position below the "Recent Company Highlights" heading
+pdf.set_xy(10, 75)  # Adjust position as needed
+
+# Set font for the content
+pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 100mm width
+pdf.multi_cell(135, 5, front_headlines_text)
+# Open and read the content of the frontheadlines1.txt file
+with open('frontheadlines1.txt', 'r') as file:
+    front_headlines1_text = file.read()
+
+# Set position below the "Recent Company Highlights" section
+pdf.set_xy(10, 125)  # Adjust position as needed
+
+# Set font for the content
+pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 100mm width
+pdf.multi_cell(135, 5, front_headlines1_text)
+# Open and read the content of the frontheadlines3.txt file
+with open('frontheadlines3.txt', 'r') as file:
+    front_headlines3_text = file.read()
+
+# Set position below the previous section
+pdf.set_xy(10, 175)  # Adjust position as needed
+
+# Set font for the content
+pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 100mm width
+pdf.multi_cell(135, 5, front_headlines3_text)
+
 
 # Add a new page for the graphs
 pdf.add_page()
@@ -161,4 +213,3 @@ pdf.ln(10)  # Line break
 
 # Save the PDF
 pdf.output('TPG_Telecom_Limited.pdf')
-
