@@ -144,6 +144,8 @@ pdf.set_xy(10, 40)  # Adjust position as needed
 pdf.set_font('Arial', '', 10)
 
 # Add the text with word wrapping to fit within 100mm width
+if pdf.get_y() + 10 > 297:  # Check if the next content will exceed the page height
+    pdf.add_page()
 pdf.multi_cell(135, 5, company_overview_text)
 
 # Add "Recent Company Highlights" heading
@@ -187,7 +189,121 @@ pdf.set_font('Arial', '', 10)
 
 # Add the text with word wrapping to fit within 100mm width
 pdf.multi_cell(135, 5, front_headlines3_text)
+# Add a new page for the graphs
+pdf.add_page()
 
+# Add the logo to the new page
+pdf.image('TPG-logo.png', x=160, y=5, w=45)
+
+# Add the purple left border
+pdf.set_fill_color(83, 0, 106)  # Set fill color to #53006A
+pdf.rect(x=0, y=0, w=5, h=297, style='F')  # Draw the filled rectangle (A4 height is 297mm)
+
+# Add the yellow border next to the purple border
+pdf.set_fill_color(255, 180, 1)  # Set fill color to #FFB401
+pdf.rect(x=5, y=0, w=2, h=297, style='F')  # Draw the yellow rectangle
+
+# Add the logo to the top right corner
+pdf.image('TPG-logo.png', x=160, y=5, w=45)
+# Add "Investment Thesis and Valuation Summary" title on the right-hand side
+pdf.set_xy(110, 30)  # Set position on the right-hand side
+pdf.set_font('Arial', 'B', 14)  # Set font to bold and same size
+
+# Add the title with word wrapping to fit within 85mm width
+pdf.multi_cell(90, 5, 'Investment Thesis and Valuation Summary', align='C')
+
+# Add a highlight background to the title
+pdf.set_fill_color(83, 0, 106)  # Set fill color to #53006A
+pdf.rect(x=110, y=30, w=90, h=10, style='F')  # Draw the filled rectangle behind the title
+
+# Set the title text color to white
+pdf.set_text_color(255, 255, 255)
+
+# Add the title with word wrapping to fit within 100mm width
+pdf.set_xy(110, 30)  # Reset position to ensure text is on top of the rectangle
+pdf.multi_cell(90, 5, 'Investment Thesis and Valuation Summary', align='L')
+
+# Reset text color to black for subsequent content
+pdf.set_text_color(0, 0, 0)
+
+# Add "Investment Thesis" title on the right-hand side
+pdf.set_xy(110, 45)  # Set position below the "Investment Thesis and Valuation Summary" section
+pdf.set_font('Arial', 'B', 10)  # Set font to bold and size 10
+
+# Add a highlight background to the title
+pdf.set_fill_color(211, 211, 211)  # Set fill color to light gray
+pdf.rect(x=110, y=45, w=90, h=5, style='F')  # Draw the filled rectangle behind the title
+
+# Set the title text color to black
+pdf.set_text_color(0, 0, 0)
+
+# Add the title with word wrapping to fit within 90mm width
+pdf.set_xy(110, 45)  # Reset position to ensure text is on top of the rectangle
+pdf.multi_cell(90, 5, 'Investment Thesis', align='L')
+
+# Reset text color to black for subsequent content
+pdf.set_text_color(0, 0, 0)
+
+# Open and read the content of the investmentthesis.txt file
+with open('investmentthesis.txt', 'r') as file:
+    investment_thesis_text = file.read()
+
+# Set position below the "Investment Thesis and Valuation Summary" title
+pdf.set_xy(110, 55)  # Adjust position as needed
+
+# Set font for the content
+pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 85mm width
+pdf.multi_cell(90, 5, investment_thesis_text)
+
+# Add "Valuation Summary" title on the right-hand side
+pdf.set_xy(300, 150)  # Set position below the "Investment Thesis and Valuation Summary" section
+pdf.set_font('Arial', 'B', 10)  # Set font to bold and size 10
+
+# Add a highlight background to the title
+pdf.set_fill_color(211, 211, 211)  # Set fill color to light gray
+pdf.rect(x=110, y=150, w=90, h=5, style='F')  # Draw the filled rectangle behind the title
+
+# Set the title text color to black
+pdf.set_text_color(0, 0, 0)
+
+# Add the title with word wrapping to fit within 90mm width
+pdf.set_xy(110, 150)  # Reset position to ensure text is on top of the rectangle
+pdf.multi_cell(90, 5, 'Valuation Summary', align='L')
+
+# Reset text color to black for subsequent content
+pdf.set_text_color(0, 0, 0)
+# Open and read the content of the valuation.txt file
+with open('valuation.txt', 'r') as file:
+    valuation_text = file.read()
+
+# Set position below the "Valuation Summary" title
+pdf.set_xy(110, 160)  # Adjust position as needed
+
+# Set font for the content
+pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 85mm width
+pdf.multi_cell(90, 5, valuation_text)
+
+# Add a new page for the graphs
+pdf.add_page()
+
+# Add the logo to the new page
+pdf.image('TPG-logo.png', x=160, y=5, w=45)
+
+
+# Add the purple left border
+pdf.set_fill_color(83, 0, 106)  # Set fill color to #53006A
+pdf.rect(x=0, y=0, w=5, h=297, style='F')  # Draw the filled rectangle (A4 height is 297mm)
+
+# Add the yellow border next to the purple border
+pdf.set_fill_color(255, 180, 1)  # Set fill color to #FFB401
+pdf.rect(x=5, y=0, w=2, h=297, style='F')  # Draw the yellow rectangle
+
+# Add the logo to the top right corner
+pdf.image('TPG-logo.png', x=160, y=5, w=45)
 
 # Add a new page for the graphs
 pdf.add_page()
