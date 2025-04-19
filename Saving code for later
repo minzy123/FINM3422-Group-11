@@ -10,7 +10,7 @@
 #pdf.image('Minh_headshot.jpg', x=80, y=30, w=30)  # Add third headshot
 #pdf.set_xy(80, 60)  # Position below the third image
 # Adjust positions to fit Snig's headshot and name
-#pdf.cell(0, 10, 'Minh Ann Nguyen', align='L')
+#pdf.cell(0, 10, 'Minh Anh Nguyen', align='L')
 
 # Add Snig's headshot and name
 #pdf.image('Snig_headshot.jpg', x=115, y=30, w=30)  # Add fourth headshot
