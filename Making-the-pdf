@@ -212,7 +212,7 @@ pdf.set_font('Arial', 'B', 14)  # Set font to bold and same size
 # Add the title with word wrapping to fit within 85mm width
 pdf.multi_cell(90, 5, 'Investment Thesis and Valuation Summary', align='C')
 
-# Add a highlight background to the title
+#Add a highlight background to the title
 pdf.set_fill_color(83, 0, 106)  # Set fill color to #53006A
 pdf.rect(x=110, y=30, w=90, h=10, style='F')  # Draw the filled rectangle behind the title
 
@@ -304,6 +304,105 @@ pdf.rect(x=5, y=0, w=2, h=297, style='F')  # Draw the yellow rectangle
 
 # Add the logo to the top right corner
 pdf.image('TPG-logo.png', x=160, y=5, w=45)
+
+# Add "Risks" title on the left-hand side
+pdf.set_xy(10, 30)  # Set position on the left-hand side
+pdf.set_font('Arial', 'B', 14)  # Set font to bold and size 14
+
+# Add a highlight background to the title
+pdf.set_fill_color(83, 0, 106)  # Set fill color to #53006A
+pdf.rect(x=10, y=30, w=90, h=10, style='F')  # Draw the filled rectangle behind the title
+
+# Set the title text color to white
+pdf.set_text_color(255, 255, 255)
+
+# Add the title with word wrapping to fit within 90mm width
+pdf.set_xy(10, 30)  # Reset position to ensure text is on top of the rectangle
+pdf.cell(90, 10, 'Risks', align='L', ln=True)
+
+# Reset text color to black for subsequent content
+pdf.set_text_color(0, 0, 0)
+
+# Add "Upside Risks" title on the left-hand side
+pdf.set_xy(10, 55)  # Set position below the "Risks" section
+pdf.set_font('Arial', 'B', 10)  # Set font to bold and size 14
+
+# Add a highlight background to the title
+pdf.set_fill_color(211, 211, 211)  # Set fill color to light gray
+pdf.rect(x=10, y=55, w=90, h=5, style='F')  # Draw the filled rectangle behind the title
+
+# Set the title text color to black
+pdf.set_text_color(0, 0, 0)
+
+# Add the title with word wrapping to fit within 90mm width
+pdf.set_xy(10, 55)  # Reset position to ensure text is on top of the rectangle
+pdf.cell(90, 5, 'Upside Risks', align='L', ln=True)
+
+# Reset text color to black for subsequent content
+pdf.set_text_color(0, 0, 0)
+
+# Open and read the content of the risks.txt file
+with open('risks.txt', 'r') as file:
+    risks_text = file.read()
+
+# Set position below the "Risks" title
+pdf.set_xy(10, 43)  # Adjust position as needed
+
+# Set font for the content
+pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 90mm width
+pdf.multi_cell(90, 5, risks_text)
+
+# Add "Downside Risks" title on the left-hand side
+pdf.set_xy(10, 215)  # Set position on the left-hand side
+pdf.set_font('Arial', 'B', 10)  # Set font to bold and size 14
+
+# Add a highlight background to the title
+pdf.set_fill_color(211, 211, 211)  # Set fill color to light gray
+pdf.rect(x=10, y=215, w=90, h=5, style='F')  # Draw the filled rectangle behind the title
+
+# Set the title text color to black
+pdf.set_text_color(0, 0, 0)
+
+# Add the title with word wrapping to fit within 90mm width
+pdf.set_xy(10, 215)  # Reset position to ensure text is on top of the rectangle
+pdf.cell(90, 5, 'Downside Risks', align='L', ln=True)
+
+# Reset text color to black for subsequent content
+pdf.set_text_color(0, 0, 0)
+
+# Open and read the content of the risks1.txt file
+with open('risks1.txt', 'r') as file:
+    risks1_text = file.read()
+
+# Set position below the "Downside Risks" title
+pdf.set_xy(10, 225)  # Adjust position as needed
+
+# Set font for the content
+pdf.set_font('Arial', '', 10)
+
+# Add the text with word wrapping to fit within 90mm width
+pdf.multi_cell(90, 5, risks1_text)
+
+# Add "Catalysts" title on the right-hand side
+pdf.set_xy(110, 30)  # Set position on the right-hand side
+pdf.set_font('Arial', 'B', 14)  # Set font to bold and size 14
+
+# Add a highlight background to the title
+pdf.set_fill_color(83, 0, 106)  # Set fill color to #53006A
+pdf.rect(x=110, y=30, w=90, h=10, style='F')  # Draw the filled rectangle behind the title
+
+# Set the title text color to white
+pdf.set_text_color(255, 255, 255)
+
+# Add the title with word wrapping to fit within 90mm width
+pdf.set_xy(110, 30)  # Reset position to ensure text is on top of the rectangle
+pdf.cell(90, 10, 'Catalysts', align='L', ln=True)
+
+# Reset text color to black for subsequent content
+pdf.set_text_color(0, 0, 0)
+
 
 # Add a new page for the graphs
 pdf.add_page()
