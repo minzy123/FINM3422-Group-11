@@ -1,0 +1,1 @@
+Beyond Their Intended Scope looks at last week's BGP leak by a DDoS mitigation company. The leak briefly disrupted and misdirected internet traffic from around the world through Bucharest, Romania.
