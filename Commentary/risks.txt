@@ -1,24 +1,11 @@
-Based on our hold position of TPG, there are a number of upside and downside risks to consider. 
-Increased mobile and fixed subscribers
+Based on our hold position on TPG there are a number of key upside and downside risks that warrant consideration.
 
 
-A key source of potential upside lies in higher-than forecast growth in both mobile and fixed-line
- subscribers. Accelerated customer acquisition, peraticularly through TPG's increased marketing 
- initiative coupled with its MOCN expansion could drive top-line performance. Additionally, a rebound
-  in net migration and international arrivals may also bolster mobile prepaid and postpaid growth. 
-ARPU expansion exceeding expectations
-If ARPU increases at a faster pace than anticipated, through effective pricing strategies, bundling 
-or upselling of value-added services revenue and margin outcomes could materially exceed forecasts. 
-This is particularly relevant in this competitive environment, where operators are exercising greater
- pricing discipline. 
-Investment-led market share gains
-Given TPG's recent history with divestiture and partnerships, increased or more efficiently deployed 
-investment in network infrastructure, digital platforms or customer service could yield outsized 
-returns through enhanced customer acquisition and retention.
+1. Increased Mobile and Fixed Subscriber Growth
+A primary source of potential upside stems from stronger than expected growth in both mobile and fixed line subscriber numbers. This could be driven by TPGs intensified marketing efforts aimed at boosting brand visibility and customer acquisition. In particular the continued rollout of the Multi Operator Core Network MOCN agreement with Optus may enhance coverage and service quality attracting new users and supporting higher retention rates. Furthermore a sustained recovery in international arrivals and net migration could provide a tailwind for mobile subscriber growth especially in the prepaid and postpaid segments which often benefit from population inflows.
 
+2. ARPU Expansion Outpacing Expectations
+Another potential driver of outperformance lies in Average Revenue Per User ARPU growth exceeding forecasts. This could materialize through a combination of effective pricing strategies bundling of services e.g. internet and mobile and upselling of value added offerings such as streaming services cybersecurity or cloud storage. In an environment where operators are showing greater pricing discipline TPG could benefit from reduced churn and higher margin revenues ultimately lifting both topline and profitability metrics beyond current projections.
 
-Notably, the key downside risks include weaker-than-expected subscriber growth in both mobile
-and fixed segments due to heightened competition, or slower recovery in international arrivals. 
-Additionally, if APRU growth underperforms, top-line pressure may intensify. Finally, if increased
-investment such as the MOCN partnership fails to yield corresponding market share gains, returns 
-on capital may deteriorate, weighing on both margins and investor sentiment. 
+3. InvestmentLed Market Share Gains
+TPGs ability to deploy capital efficiently into areas such as network infrastructure digital platforms and customer service could support further market share expansion. Building on the momentum from recent divestitures and strategic partnerships the company may be well positioned to capitalize on investments that enhance user experience operational efficiency and service differentiation. Should these initiatives translate into tangible customer gains the upside potential in both revenue growth and operational leverage could be significant.
