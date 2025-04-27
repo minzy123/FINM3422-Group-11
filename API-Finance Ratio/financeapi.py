@@ -34,5 +34,5 @@ def ev_ebitda(ev, ebitda): # Function to calculate the Enterprise Value over EBI
 def asset_turnover(total_assets, total_revenue): # Function to calculate the asset turnover of a stock
     return total_assets / total_revenue
 
-def inventory_turnover(inventory, total_revenue):
+def inventory_turnover(inventory, total_revenue): # Function to calculate the inventory turnover of a stock
     return inventory / total_revenue
